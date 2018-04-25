@@ -1,0 +1,17 @@
+{
+  "name": "CTVcrawler",
+  "version": "0.0.0",
+  "description": "",
+  "main": "fctnews.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crawler": "^0.2.5",
+    "jsonfile": "^1.1.1",
+    "pagedown": "^1.1.0",
+    "util": "^0.10.3"
+  }
+}

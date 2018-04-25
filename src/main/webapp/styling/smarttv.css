@@ -1,0 +1,349 @@
+/*General document css*/
+
+* {
+    font-family: Calibri, Myriad, Helvetica, sans-serif;
+}
+
+#panel {
+    padding: 0 0 0 200px;
+}
+
+/* This section relates mostly to the top bar*/
+
+#top-bar {
+    position: relative;
+    margin-top: 30px;
+    height: 40px;
+    width: 100%;
+}
+
+#centered-top-bar {
+    position: relative;
+    width: 60%;
+    max-width: 1300px;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#create-news-hidden, #search-wrapper {
+    padding: 0 10px 0 10px;
+    background-color: #e6e7e9;
+    height: 100%;
+    display: inline-block;
+    line-height: 40px;
+}
+
+#create-news-hidden {
+    width: 65%;
+    border-right: solid 4px #fafafa;
+}
+
+#search-wrapper {
+    width: 35%;
+}
+
+#search-field {
+    background: url("/img/search16.png") no-repeat 8px 5px #fff;
+}
+
+#title-create-hidden {
+    background: url("/img/icon_03_w.png") no-repeat 8px 5px #fff;
+}
+
+.search-field {
+    padding: 0 15px 0 30px;
+    width: 100%;
+    height: 25px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+}
+
+#login {
+    padding-left: 20px;
+    position: absolute;
+    top: 0;
+    line-height: 40px;
+    height: 40px;
+    overflow-wrap: break-word;
+    left: 80%;
+}
+
+#login-icon {
+    height: 40px;
+    float: left;
+}
+
+#login > div {
+    display: inline-block;
+    text-align: left;
+    margin-left: 10px;
+}
+
+#create-news-wrapper {
+    border-bottom: 2px solid #a5a5a5;
+    padding-bottom: 20px;
+}
+
+#create-news {
+    display: none;
+    padding-top: 20px;
+    position: relative;
+    width: 100%;
+}
+
+#left {
+    min-width: 250px;
+    max-width: 355px;
+    height: 100%;
+    float: left;
+    width: 33%
+}
+
+#photo-preview {
+    background-image: url('/img/no_photo.png');
+    background-color: #B1B1B1;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+}
+
+#url-prompt {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#submit-create {
+    margin: 20px 5% 0 0;
+}
+
+#cancel-create {
+    margin: 20px 0 0 5%;
+}
+
+#right {
+    display: inline-block;
+    height: 100%;
+    padding-left: 30px;
+    width: 67%;
+}
+
+#right > .input-field, #brief-field {
+    margin-bottom: 17px;
+}
+
+#right > .input-field, #right > textarea {
+    display: block;
+    width: 100%;
+}
+
+#news-field {
+    height: 145px;
+}
+
+#brief-field {
+    height: 59px;
+}
+
+#header-create {
+    text-align: left;
+    font-size: 22pt;
+    font-weight: 600;
+}
+
+#login-icon {
+    width: 40px;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#logout {
+    padding-left: 5px;
+    text-decoration: underline;
+}
+
+#logout:hover {
+    cursor: pointer;
+    color: #0094d8;
+}
+
+/* This section relates mostly to the zone where news are appended and news themselves*/
+
+.news-tags {
+    display: inline;
+}
+
+.news-tags:hover {
+    cursor: pointer;
+    color: #0094d8;
+}
+
+#content-list-title {
+    margin-top: 5px;
+    color: #a5a5a5;
+    text-align: left;
+    font-size: 20pt;
+    font-weight: 500;
+}
+
+#news-zone {
+    padding-top: 10px;
+}
+
+.news-container {
+    height: auto;
+    position: relative;
+    margin-top: 40px;
+}
+
+.news-expand-button {
+    width: auto;
+    height: 150%;
+    right: 2%;
+    bottom: -75%;
+    position: absolute;
+}
+
+.news-photo-wrap {
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    width: 33%;
+    float: left;
+}
+
+.news-body-wrap {
+    display: inline-block;
+    padding: 0 0 0 30px;
+    height: 200px;
+    width: 67%;
+}
+
+.news-tag-box {
+    position: relative;
+    padding: 0 2px;
+    color: #a5a5a5;
+    text-align: left;
+    font-size: 10pt;
+    height: 16px;
+    width: 100%;
+    margin: 6px auto;
+    border-bottom: solid 1px #a5a5a5;
+}
+
+.news-text-wrapper > p, .title {
+    display: block;
+    color: #3B3B3B;
+    text-align: left;
+    line-height: 20pt;
+    padding: 0;
+    margin: 0;
+}
+
+.news-text-window {
+    height: 141px;
+    overflow-y: hidden;
+}
+
+.news-text-wrapper > p {
+    font-size: 12pt;
+    color: #8e8e8e;
+}
+
+.title {
+    color: #131313;
+    text-align: left;
+    font-size: 20pt;
+    font-weight: 500;
+}
+
+.title:hover {
+    color: #0094d8;
+    cursor: pointer;
+}
+
+.gradientDiv{
+    height: 14px;
+    width: 63%;
+    position: absolute;
+    bottom: 30px;
+    background-image: linear-gradient(to top, rgba(250, 250, 250, 1), rgba(250, 250, 250, 0));
+}
+
+.options {
+    text-align: left;
+    opacity: 0.5;
+    margin: 0;
+    padding-top: 5px;
+    position: absolute;
+    width: 60%;
+    height: 30px;
+    bottom: 0;
+}
+
+.options-icon {
+    height: 80%;
+    width: auto;
+    margin: 0 10% 0 0;
+}
+
+.nLikes {
+    font-size: 10pt;
+    float: right;
+    color: #0094d8;
+}
+
+.news-photo {
+    display: block;
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* Turning point at 1330 ----------- */
+@media screen and (max-width: 1330px) {
+
+    #top-bar {
+        margin-top: 80px;
+    }
+
+    #login {
+        top: -65px;
+    }
+
+    #centered-top-bar {
+        width: 80%;
+    }
+
+    #right {
+        margin-top: 20px;
+        padding: 0;
+        width: 100%;
+        display: block;
+    }
+
+    #left {
+        margin: 0 auto;
+        text-align: center;
+        max-width: none;
+        float: none;
+        width: 90%;
+    }
+}
+
+/*    footer           */
+
+.footer {
+    height: 155px; /* .push must be the same height as .footer */
+    margin-top: 50px;
+}
+
+.footer-img {
+    height: 75px;
+    width: 75px;
+}

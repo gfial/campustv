@@ -1,0 +1,117 @@
+/**
+ * Created by PhilipSena on 19-06-2014.
+ */
+$(function () {
+
+    $("#login").leanModal({top: 200, overlay: 0.6, closeButton: ".modal_close" });
+    $("#left-panel-login").leanModal({top: 200, overlay: 0.6, closeButton: ".modal_close" });
+
+    // Calling Login Form
+    $("#login_form").click(function () {
+        $(".social_login").hide();
+        $(".user_login").show();
+        return false;
+    });
+
+    // Calling Register Form
+    $("#register_form").click(function () {
+        $(".social_login").hide();
+        $(".user_register").show();
+        $(".header_title").text('Register');
+        return false;
+    });
+
+    // Going back to Social Forms
+    $(".back_btn").click(function () {
+        $(".user_login").hide();
+        $(".user_register").hide();
+        $(".social_login").show();
+        $(".header_title").text('Login');
+        return false;
+    });
+
+    $('#submitLogin').click(function () {
+            submitForm(1);
+        }
+    );
+
+    $('#submitRegister').click(function () {
+            submitForm(2);
+        }
+    );
+
+    function submitForm(tipo) {
+
+        if (tipo === 1) {
+
+            var jsonLoginToSend = makeLoginJson();
+
+            console.log(jsonLoginToSend);
+
+            ajaxRequest('api/member/login', jsonLoginToSend, 'post', successLogin, errorLogin);
+
+        }
+
+        if (tipo === 2) {
+
+            var jsonRegisterToSend = makeRegisterJson();
+
+            console.log(jsonRegisterToSend);
+
+            ajaxRequest('api/member/create', jsonRegisterToSend, 'post', successRegister, errorRegister);
+        }
+    }
+
+    function successLogin (){
+
+        console.log("Login foi um sucesso!!!");
+    }
+
+
+    function errorLogin () {
+        console.log("O seu identificador (email ou username), ou password estão incorrectos.");
+    }
+
+    function successRegister (){
+        console.log("Bem vindo à campus tv.");
+    }
+
+    function errorRegister (){
+        console.log("Falhou ao registar-se na plataforma.");
+    }
+
+    // REQUEST
+    function ajaxRequest(url, data, method, success, error) {
+        return $.ajax({
+            url: url,
+            data: JSON.stringify(data),
+            type: method,
+            contentType: "application/json; charset=utf-8",
+            xhrFields: {
+                withCredentials: true
+            }
+        }).done(success).fail(error);
+    }
+
+    function makeRegisterJson() {
+
+        return (
+        {
+            "username": document.getElementById('registerUsername').value,
+            "email": document.getElementById('registerEmail').value,
+            "password": document.getElementById('registerPassword').value
+        });
+    }
+
+    function makeLoginJson() {
+
+        return (
+        {
+            "email": document.getElementById('loginEmail').value,
+            "password": document.getElementById('loginPassword').value
+        });
+    }
+
+
+
+})

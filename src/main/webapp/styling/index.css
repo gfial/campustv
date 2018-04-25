@@ -1,0 +1,190 @@
+
+body {
+    height: 100%;
+}
+
+#content-area {
+    text-align: center;
+}
+
+#login-wrap {
+    border-radius: 20px;
+    padding: 5px;
+    position: absolute;
+    height: 45px;
+    right: 30px;
+    top: 30px;
+}
+
+#login-wrap:hover {
+    background-color: #e6e7e8;
+    cursor: pointer;
+}
+
+#login-wrap > * {
+    font-weight: 800;
+    line-height: 35px;
+    vertical-align: top;
+    height: 100%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#logo {
+    height: 150px;
+    text-align: center;
+    margin: 20vh 0 50px 0;
+}
+
+#info-box-grid {
+    text-align: center;
+    margin: 5% 0 0 0;
+    display: inline-block;
+    border-spacing: 6px;
+    width: 400px;
+}
+
+.info-box {
+    border-radius: 6px;
+    color: whitesmoke;
+    font-size: 0.8em;
+}
+
+#search-wrapper, #input-deco {
+    height: 35px;
+}
+
+#search-wrapper {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#input-deco {
+    position: absolute;
+    float: left;
+    width: 40px;
+    border-right: solid 4px #fafafa;
+}
+
+#search-box {
+    background: url("/img/icon_search_k.png") no-repeat 1px 1px #e6e7e8;
+    padding: 0 10px 0 50px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    width: 100%;
+    display: block;
+}
+
+/* login window interface zone*/
+
+#outer-window-holder, #dark-background {
+    min-height: 100vh;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+}
+
+#outer-window-holder {
+    display: none;
+    text-align: center;
+}
+
+#middle-window-holder {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#dark-background {
+    display: none;
+    opacity: 0.5;
+    background-color: #232323;
+}
+
+#login-window {
+    position: relative;
+    padding: 20px;
+    margin: 0 auto;
+    z-index: 3;
+    text-align: left;
+    width: 400px;
+    background-color: #fafafa;
+}
+
+.login-header {
+    font-size: 20pt;
+}
+
+#login > *, #register > * {
+    display: block;
+    margin: 15px 0;
+    width: 100%;
+}
+
+#submit-login {
+    margin-bottom: 65px;
+}
+
+#register {
+    display: none;
+}
+
+#register-buttons {
+    text-align: center;
+}
+
+#submit-register {
+    margin: 0 5% 0 0;
+}
+
+#cancel-register {
+    margin: 0 0 0 5%;
+}
+
+#button-site{
+    margin: 110px auto;
+    width: 9%;
+}
+
+#logo-smarttv{
+    background-image: url('/img/icon_03_g.png');
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    float: left;
+}
+
+#logo-tv{
+    background-image: url('/img/tvlogo1.png');
+    margin-right: 10px;
+    width: 55px;
+    height: 55px;
+    background-size: cover;
+    float: right;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (max-width : 1080px) {
+    /* Styles */
+
+    #logo {
+        margin-top: 10%;
+        height: 100px;
+    }
+
+    #login-bar {
+        padding-top: 20px;
+    }
+
+    #info-box-grid {
+        margin-top: 40px;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .info-box {
+        font-size: 0.75em;
+    }
+
+}

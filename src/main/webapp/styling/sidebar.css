@@ -1,0 +1,127 @@
+#logo {
+    z-index: 2;
+    position: fixed;
+    height: 60px;
+    top: 20px;
+    left: 30px;
+}
+
+#logo > img {
+    height: 100%;
+}
+
+#sidebar {
+    z-index: 2;
+    position: fixed;
+    top: 100px;
+    width: 200px;
+    height: 800px;
+}
+
+.built-in, .sidebar-item-group, .menu-box {
+    -moz-box-shadow:    6px 6px 25px 0 #807e7f;
+    -webkit-box-shadow: 6px 6px 25px 0 #807e7f;
+    box-shadow:         0 5px 10px #807e7f;
+}
+
+.sidebar-item {
+    position: relative;
+    font-weight: 700;
+    padding-left: 40px;
+    line-height: 40px;
+    font-size: 13pt;
+    height: 40px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hover-avoiding-wrap {
+    position: relative;
+}
+
+.sidebar-item:hover {
+    cursor: pointer;
+    background-color: #0094d8 !important;
+    color: #ffffff !important;
+}
+
+.submenu, .menu-box {
+    display: none;
+    position: absolute;
+    left: 210px;
+    top: 0;
+}
+
+.submenu {
+    width: 100%;
+}
+
+.menu-box {
+    padding: 6px 15px;
+    border-left: 4px solid #0094d8;
+    width: 300px;
+    background-color: #f5f5f5;
+}
+
+.menu-box > * {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.menu-box-title {
+    font-size: 20pt;
+    margin-bottom: 5px;
+}
+
+.tag-brief-field {
+    height: 100px;
+}
+
+.auth-wrap-box {
+    height: 30px;
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.auth-wrap-box > * {
+    margin-left: 5px;
+    vertical-align: top;
+    height: 100%;
+    display: inline-block;
+    line-height: 20px;
+}
+
+.built-in {
+    color: #fafafa;
+    background-color: #232323;
+    margin: 2px 0;
+}
+
+/*Make dynamic height to fit 10 channels*/
+#sidebar-channels {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.added-in, .submenu-item {
+    border-top: 1px solid #a5a5a5;
+    background-color: #e6e7e9;
+}
+
+.submenu-item {
+    padding-left: 10px;
+}
+
+.first-item {
+    border-top: none;
+}
+
+#management {
+    background-color: #a5a5a5;
+}
+
+#create-channel {
+    background: url("/img/plus2.png") no-repeat 14px center #e6e7e9;
+    color: #939393;
+}

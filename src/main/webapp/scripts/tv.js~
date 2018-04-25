@@ -1,0 +1,355 @@
+/**
+ * Created by Guilherme on 21/05/2014.
+ */
+
+//Todo: perceber bem o codigo.
+//Carregar noticias a partir dos channels do member.
+//Procurar videos do youtube no content das news.
+
+var SIMULTANEOUS_NEWS_DISPLAY = 5;
+var MINUTE = 60 * 1000;
+
+var AVG_CHARS_PER_WORD = 6;
+var AVG_WORDS_PER_MINUTE = 150;
+
+//Check this function.
+function readTime(news) {
+    return (news.brief.length + news.title.length) * MINUTE / ( AVG_CHARS_PER_WORD * AVG_WORDS_PER_MINUTE );
+}
+
+//Main area read time, and fade time
+var READTIME = MINUTE / 6;
+var NEWS_FADE = 1000;
+
+//Bar read time and scroll time.
+var SCROLLTIME = 500;
+
+
+//Hold the current main panel news, and the corresponding counter.
+var mainPanelNewsCounter = 0;
+var mainPanelNews = [];
+
+var barPanelNewsCounter = 1;
+var barPanelNews = [];
+
+//The number of news in the bar.
+var numBarNews = 0;
+
+
+//Style related variables.
+var newsHeight;
+var newsInterval = null;
+var mainNewsInterval = null;
+
+var speed = 8000;
+
+var fadingDiv = null;
+
+
+var $mainNewsArea = null;
+var $newsHolder = null;
+
+//Holds the current session of the tv.
+var tvSession = null;
+
+var currentChannel = null;
+
+
+$(document).ready(function() {
+
+    setupSession(function(session) {
+        console.log(session);
+        setupTvSession(session, function(tvSessionJson) {
+            console.log("Tv Session is setup.");
+            tvSession = tvSessionJson;
+            console.log(tvSessionJson);
+
+            initBarNews();
+            initTv();
+        });
+    });
+
+    $mainNewsArea = $('#main-news-area');
+    $newsHolder = $('#news-holder');
+
+    setClock();
+});
+
+function setupMainPanelNews() {
+    mainPanelNewsCounter = 0;
+
+    currentChannel = tvSession.getNextChannel();
+    mainPanelNews = currentChannel.news;
+}
+
+function setupBarPanelNews() {
+    barPanelNewsCounter = 1;
+    tvSession.getSmartTvNews();
+    barPanelNews = tvSession.session.smartTvSession.news;
+}
+
+// Start displaying time in real-time
+function setClock() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var day = date.getDay();
+
+    var month = getMonthFromNumber(date.getMonth());
+
+    if (day<=9)
+        day="0"+day;
+    if (hours<=9)
+        hours="0"+hours;
+    if (minutes<=9)
+        minutes="0"+minutes;
+    $("#time").html(day + " " + month + " &nbsp&nbsp " + hours + ":" + minutes);
+
+    setTimeout(setClock, MINUTE/2);
+}
+
+
+// Build the slide with the "currentMainPos" of the "mainPaneNews" data
+function assembleMainNews(votedContent, mainNewsEntry1) {
+
+    var news = votedContent.news;
+<<<<<<< HEAD
+
+    if(mainPanelNewsCounter == mainPanelNews.length - 1) {
+        ($("<video/>", {
+            "id": "main-news-wrapper",
+            html: "<div class='main-title'>" +
+                "<div>" + news.title + "</div>" +
+                "</div>" +
+                "<div class='main-brief'>" +
+                "<div class='reflection'></div>" +
+                "<div>" + news.brief + "</div>" +
+                "</div>"
+        }).css({'background-image': 'url(' + news.imgPath + ')'})).appendTo($mainNewsArea);
+    } else {
+        ($("<div/>", {
+            "id": "main-news-wrapper",
+            html: "<div class='main-title'>" +
+                "<div>" + news.title + "</div>" +
+                "</div>" +
+                "<div class='main-brief'>" +
+                "<div class='reflection'></div>" +
+                "<div>" + news.brief + "</div>" +
+                "</div>"
+        }).css({'background-image': 'url(' + news.imgPath + ')'})).appendTo($mainNewsArea);
+        //console.log();
+    }
+    console.log("Supposedly running before");
+=======
+    var tag = "Geral";
+    //var videoID = checkIfVideo(news.content);
+
+    if(news.tags.length)
+        tag = news.tags[0].name;
+
+    $('#main-news-tag').html(tag);
+
+    ($("<div/>", {
+        "id": "main-news-wrapper",
+        html:   "<div class='main-title'>" +
+            "<div>" + news.title + "</div>" +
+            "</div>" +
+            "<div class='main-brief'>" +
+            "<div class='reflection'></div>"+
+            "<div>" + news.brief + "</div>"+
+            "</div>"
+    }).css({'background-image' : 'url(' + news.imgPath + ')'})).appendTo($mainNewsArea);
+
+>>>>>>> 32201ce5be202087dbf0791d85f5efe09e841a62
+    $mainNewsArea.fadeIn(NEWS_FADE);
+    mainNewsEntry1();
+}
+
+// Changes the current slide in the Main news area.
+function changeMainNews() {
+    if(mainPanelNewsCounter == mainPanelNews.length) {
+        setupMainPanelNews();
+    }
+
+    if($('#main-news-wrapper').length) {
+        $mainNewsArea.fadeOut(NEWS_FADE, function () {
+            $mainNewsArea.empty();
+            assembleMainNews(mainPanelNews[mainPanelNewsCounter++], mainNewsEntry1);
+        });
+    } else {
+        assembleMainNews(mainPanelNews[mainPanelNewsCounter++], mainNewsEntry1);
+    }
+}
+
+// Performs a specific entrance for the title and briefing on the main news
+function mainNewsEntry1() {
+
+    $('.main-title').slideDown(NEWS_FADE);
+    $('.main-brief').fadeIn(NEWS_FADE);
+
+}
+
+// Adds more news to the main TV screen area, including views
+function initTv() {
+
+    setupMainPanelNews();
+    changeMainNews();
+    mainNewsInterval = setInterval(changeMainNews, READTIME);
+}
+
+function writeBarNews(votedContent) {
+    var news = votedContent.news;
+    var tag = "Geral";
+
+    if (news.tags.length > 0) {
+            tag = news.tags[0].name;
+    }
+
+    $("<li/>", {
+        "class": "news-wrapper",
+        html: "<h3>" + news.title + "</h3>" +
+            "<h6>" + tag + "</h6>" +
+            "<h4>" + news.brief + "</h4>"
+    }).appendTo($newsHolder);
+}
+
+// Loads the right bar with the news present in the json input (stored in barPanelNews).
+function reloadBarNews() {
+    setupBarPanelNews();
+
+    if(barPanelNews == null)
+        return null;
+
+    numBarNews = barPanelNews.length;
+    var i;
+
+    for(i = 0; i < numBarNews; i++) {
+        writeBarNews(barPanelNews[i]);
+    }
+
+    newsHeight = $('.news-wrapper').outerHeight(true);
+    $('#news-bar-area').css('height',SIMULTANEOUS_NEWS_DISPLAY * newsHeight);
+    $newsHolder.css('height',numBarNews * newsHeight);
+}
+
+//Initializes the while process of news fetching and scrolling.
+function initBarNews() {
+    setupBarPanelNews();
+    reloadBarNews();
+    scrollNews();
+    newsInterval = setInterval(scrollNews, speed);
+}
+
+// Animates an entire step of the bar news.
+function scrollNews() {
+    var nextDiv;
+    if(fadingDiv != null) {
+        fadingDiv.find('h4').slideUp(function () {
+            fadingDiv.animate({'height': '100px'}, function () {
+                // Refresh the entire news column (-1 is a code to indicate bar ended the scroll and is ready to update)
+                if(barPanelNewsCounter == -1) {
+                    $newsHolder.animate({'opacity': 0}, function() {
+                        $newsHolder.empty().css({'margin-top':0});
+                        reloadBarNews();
+
+                        $newsHolder.animate({'opacity': 1}, function() {
+                            barPanelNewsCounter = 1;
+                            fadingDiv = null;
+                            scrollNews();
+                        });
+                    });
+                    return 0;
+                } else {
+                    nextDiv = $('.news-wrapper:nth-child(' + barPanelNewsCounter + ')');
+                }
+                
+                // Every news fades except last one
+                if(!(barPanelNewsCounter == 1))
+                    fadingDiv.animate({'opacity': 0}, 500);
+
+                $newsHolder.animate({'margin-top': newsHeight * ((-barPanelNewsCounter) + 1)}, 1500, function () {
+                    nextDiv.animate({'height': '200px'}, function () {
+                        nextDiv.find('h4').slideDown(function () {
+                            // Div turned invisible last cycle must be put to opacity = 1 again so it reappears.
+                            fadingDiv.css({'opacity': 1});
+                            fadingDiv = nextDiv;
+
+                            // if is at the last news in the bar
+                            if(barPanelNewsCounter == numBarNews) {
+
+                                // if there is a pending bar news update
+                                //if(barPanelNews != null) {
+                                    barPanelNewsCounter = -1;
+                                //} else {
+                                //    barPanelNewsCounter = 1;
+                                //}
+                            } else {
+                                barPanelNewsCounter++;
+                            }
+                        });
+                    });
+                });
+            });
+        });
+    } else { //First run
+        nextDiv = $('.news-wrapper:nth-child(' + (barPanelNewsCounter) + ')');
+        nextDiv.animate({'height': '200px'}, function() {
+            nextDiv.find('h4').slideDown();
+        });
+        fadingDiv = nextDiv;
+        barPanelNewsCounter++;
+    }
+}
+
+// If there isn't a video return -1
+// Else returns video id (String)
+function checkIfVideo(tar) {
+
+    var x = linkifyYouTubeURLs(tar);
+
+    var y = x.split('VIDEO_ID:--');
+
+    if(y==x) {
+        return -1;
+    }else{
+        var z =  y[1].split('--:');
+        console.log('O ID DO VIDEO E: ' + z[0]);
+    }
+
+    // Linkify youtube URLs which are not already links.
+    function linkifyYouTubeURLs(text) {
+        var re = /https?:\/\/(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\S*[^\w\s-])([\w-]{11})(?=[^\w-]|$)(?![?=&+%\w.-]*(?:['"][^<>]*>|<\/a>))[?=&+%\w.-]*/ig;
+        return text.replace(re,
+            '<a href="http://www.youtube.com/watch?v=$1">VIDEO_ID:--$1--:</a>');
+    }
+}
+
+function getMonthFromNumber(num) {
+
+    if(num == 1)
+        return "JANEIRO";
+    if(num == 2)
+        return "FEVEREIRO";
+    if(num == 3)
+        return "MARÇO";
+    if(num == 4)
+        return "ABRIL";
+    if(num == 5)
+        return "MAIO";
+    if(num == 6)
+        return "JUNHO";
+    if(num == 7)
+        return "JULHO";
+    if(num == 8)
+        return "AGOSTO";
+    if(num == 9)
+        return "SETEMBRO";
+    if(num == 10)
+        return "OUTUBRO";
+    if(num == 11)
+        return "NOVEMBRO";
+    if(num == 12)
+        return "DEZEMBRO";
+
+
+}

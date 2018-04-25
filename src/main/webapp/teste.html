@@ -1,0 +1,24 @@
+<html>
+<body>
+    <h1>File Upload with Jersey</h1>
+ 
+    <form action="/api/multimedia/upload" method="post" enctype="multipart/form-data">
+ 
+       <p>
+        Select a file : <input type="file" name="file" size="45" />
+       </p>
+ 
+       <input type="submit" value="Upload It" />
+    </form>
+
+    <form action="/api/multimedia/get?query=http://imgs.vidas.xl.pt/2014-02/2014-02-19102036_961f1e4c-aef8-4f3d-8935-154a61e36164$$2066B98B-1131-4DFF-8A54-59CDCD6190D9$$9918A380-746E-4500-8BEA-6FAE5EA5B536$$img_detalhe$$pt$$1.jpg" method="post" enctype="multipart/form-data">
+ 
+       <p>
+        Select a file : <input type="text" name="url" size="200" />
+       </p>
+ 
+       <input type="submit" value="Upload It" />
+    </form>
+ 
+</body>
+</html>

@@ -1,0 +1,104 @@
+package manager.data.campus;
+
+import javax.ws.rs.core.Cookie;
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.NewCookie;
+
+import utils.campus.Logger;
+import utils.campus.TimeUtils;
+import data.campus.Member;
+import dbm.data.campus.SessionPersistor;
+import exceptions.campus.InvalidSessionException;
+import exceptions.campus.NoSuchMemberException;
+import exceptions.campus.TransactionProcessingException;
+
+public class SessionManager {
+
+	public static final String ID_FIELD = "id";
+
+	public static int getId(HttpHeaders headers) throws InvalidSessionException {
+		String sessionId = getSessionId(headers);
+		Logger.debug("Got id: " + sessionId);
+		return getMemberId(sessionId);
+	}
+
+	/**
+	 * Gets the id of the member to whom this cookies correspond.
+	 * 
+	 * @param headers
+	 * @return
+	 */
+	public static String getSessionId(HttpHeaders headers)
+			throws InvalidSessionException {
+		if (headers == null)
+			throw new InvalidSessionException();
+		Cookie cookie = headers.getCookies().get(ID_FIELD);
+		if (cookie != null) {
+			return cookie.getValue();
+		} else {
+			throw new InvalidSessionException();
+		}
+	}
+
+	/**
+	 * Creates a cookie to save a session for the given member.
+	 * 
+	 * @param member
+	 * @return
+	 * @throws TransactionProcessingException
+	 */
+	public static NewCookie createCookie(Member member)
+			throws TransactionProcessingException {
+	
+		String id = SessionPersistor.generateSessionId(member);
+<<<<<<< HEAD
+//		String host = "greps.herokuapp.com";
+		String host  = "localhost";
+=======
+		String host = "greps.herokuapp.com";
+//		String host = "localhost";
+>>>>>>> 44543a62134e6c00e51740f43331e90199467afb
+		return new NewCookie(ID_FIELD, id, "/", host, "Session cookie",
+				TimeUtils.SECSPERYEAR, false);
+	}
+
+	/**
+	 * Checks the user login.
+	 * 
+	 * @param id
+	 * @param password
+	 * @return
+	 * @throws NoSuchMemberException
+	 */
+	public static boolean checkUser(int id, String password) {
+		return SessionPersistor.checkUser(id, password);
+	}
+
+	/**
+	 * Logs out of the session, and deletes all the session cookies for the
+	 * member.
+	 * 
+	 * @param headers
+	 * @throws InvalidSessionException
+	 * @throws TransactionProcessingException
+	 */
+	public static void endSession(HttpHeaders headers)
+			throws InvalidSessionException, TransactionProcessingException {
+		SessionPersistor.deleteSession(getSessionId(headers));
+	}
+
+	private static int getMemberId(String sessionId)
+			throws InvalidSessionException {
+		try {
+			return SessionPersistor.getMemberId(sessionId);
+		} catch (NoSuchMemberException e) {
+			throw new InvalidSessionException(e.getLocalizedMessage());
+		}
+	}
+
+	public static void createMember(int memberId, String password)
+			throws TransactionProcessingException {
+		SessionPersistor.createUser(memberId, password);
+	}
+
+}

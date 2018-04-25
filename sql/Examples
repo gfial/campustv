@@ -1,0 +1,344 @@
+[
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 2,
+         "show": true,
+         "authorId": 2,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 1,
+         "reportWeight": 0,
+         "title": "Governo demite-se",
+         "brief": "Patos Coelho acaba de se demitir",
+         "imgPath": "http://www.abchomeopatia.com/wp-content/uploads/2013/06/pato.jpg",
+         "tags": [],
+         "content": "Ultima hora, Patos Coelho acaba de se demitir, e deixa portugal à beira da euforia. Que alegria!"
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 3,
+         "show": false,
+         "authorId": 3,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 1,
+         "reportWeight": 0,
+         "title": "It works",
+         "brief": "Vai ser apresentado hoje o novo prototipo campus TV",
+         "imgPath": "http://velocityagency.com/wp-content/uploads/2013/08/go.jpg",
+         "tags": [
+            1,
+            2,
+            4
+         ],
+         "content": "O prototipo campus tv que vai ser apresentado já conecta a uma base de dados postgres. Aliás, se não o fizesse, não estaria a ver esta noticia hihihi."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 7,
+         "show": false,
+         "authorId": 1,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 100000,
+         "reportWeight": 0,
+         "title": "Brasil wins croacia",
+         "brief": "Brasil wins croacia with a discutable penalti",
+         "imgPath": "http://www.colourswallpapers.com/wp-content/uploads/2014/06/Fifa-World-Cup-2014-Png-4.png",
+         "tags": [],
+         "content": "Brasil has yesterday won croacia. The final result was 3 neal and the MVP player was both marcelovick and the referee."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 1,
+         "show": false,
+         "authorId": 1,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 1,
+         "reportWeight": 0,
+         "title": "CampusTV",
+         "brief": "Junta-te a CampusTV e mantem-te a parte das mais recentes noticias",
+         "imgPath": "http://www.mlssoccer.com/sites/league/files/imagecache/620x350/image_nodes/2013/12/falcao.jpg",
+         "tags": [
+            1,
+            2
+         ],
+         "content": "A CampusTV é o novo veiculo de informação que pretende revolucionar a forma como as pessoas olham para a informação. Nesta plataforma, uma pessoa procura pelos conteúdos de que mais gosta, e é são lhe proporcionados excelentes conteúdos todo o dia"
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 9,
+         "show": false,
+         "authorId": 7,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 500,
+         "reportWeight": 0,
+         "title": "Colombia to face France",
+         "brief": "Colombia is training and preparing for their next match.",
+         "imgPath": "http://darkroom.baltimoresun.com/wp-content/uploads/2014/06/world-cup-netherlands051-760x511.jpg",
+         "tags": [
+            1
+         ],
+         "content": "The biggest drug dealer in the world, or not, it might be actually mexico, is preparing to the next world cup game. Their manager says they are very relaxed, and confident, and that There is no such adversary who is better than a flying unicorn."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 14,
+         "show": false,
+         "authorId": 13,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 100,
+         "reportWeight": 0,
+         "title": "Switzerland scores on the last minute. :D",
+         "brief": "Switzerland performs an outstanding game agains Ecuador",
+         "imgPath": "http://darkroom.baltimoresun.com/wp-content/uploads/2014/06/world-cup-netherlands051-760x511.jpg",
+         "tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+         ],
+         "content": "Switzerland has scored the decisive goal on the last 15 seconds of the game. It now is the leader of their group."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 15,
+         "show": false,
+         "authorId": 13,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 100,
+         "reportWeight": 0,
+         "title": "Switzerland scores on the last minute.",
+         "brief": "Switzerland performs an outstanding game agains Ecuador",
+         "imgPath": "http://darkroom.baltimoresun.com/wp-content/uploads/2014/06/world-cup-netherlands051-760x511.jpg",
+         "tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+         ],
+         "content": "Switzerland has scored the decisive goal on the last 15 seconds of the game. It now is the leader of their group."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 16,
+         "show": false,
+         "authorId": 13,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 100,
+         "reportWeight": 0,
+         "title": "Switzerland scores on the last minute.",
+         "brief": "Switzerland performs an outstanding game agains Ecuador",
+         "imgPath": "http://darkroom.baltimoresun.com/wp-content/uploads/2014/06/world-cup-netherlands051-760x511.jpg",
+         "tags": [
+            1,
+            2,
+            3
+         ],
+         "content": "Switzerland has scored the decisive goal on the last 15 seconds of the game. It now is the leader of their group."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 17,
+         "show": false,
+         "authorId": 13,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 100,
+         "reportWeight": 0,
+         "title": "Switzerland scores on the last minute.",
+         "brief": "Switzerland performs an outstanding game agains Ecuador",
+         "imgPath": "http://darkroom.baltimoresun.com/wp-content/uploads/2014/06/world-cup-netherlands051-760x511.jpg",
+         "tags": [
+            1,
+            2,
+            3
+         ],
+         "content": "Switzerland has scored the decisive goal on the last 15 seconds of the game. It now is the leader of their group."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 8,
+         "show": false,
+         "authorId": 2,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 100,
+         "reportWeight": 0,
+         "title": "Netherlands crashes Spain",
+         "brief": "Netherlands striked five against spain",
+         "imgPath": "http://darkroom.baltimoresun.com/wp-content/uploads/2014/06/world-cup-netherlands051-760x511.jpg",
+         "tags": [
+            1,
+            2,
+            3,
+            6,
+            7,
+            8
+         ],
+         "content": "The current world cup champion has lost 5-1 on an amazing mechanical orange appearence. Casillas is getting old, Van Persie said, laughing like an ass."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 10,
+         "show": false,
+         "authorId": 13,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 100,
+         "reportWeight": 0,
+         "title": "Switzerland scores on the last minute",
+         "brief": "Switzerland performs an outstanding game agains Ecuador",
+         "imgPath": "http://darkroom.baltimoresun.com/wp-content/uploads/2014/06/world-cup-netherlands051-760x511.jpg",
+         "tags": [
+            1,
+            2,
+            3,
+            6,
+            7,
+            8
+         ],
+         "content": "Switzerland has scored the decisive goal on the last 15 seconds of the game. It now is the leader of their group."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 11,
+         "show": false,
+         "authorId": 13,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 100,
+         "reportWeight": 0,
+         "title": "Switzerland scores on the last minute",
+         "brief": "Switzerland performs an outstanding game agains Ecuador",
+         "imgPath": "http://darkroom.baltimoresun.com/wp-content/uploads/2014/06/world-cup-netherlands051-760x511.jpg",
+         "tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+         ],
+         "content": "Switzerland has scored the decisive goal on the last 15 seconds of the game. It now is the leader of their group."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 12,
+         "show": false,
+         "authorId": 1,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 100000,
+         "reportWeight": 0,
+         "title": "Switzerland scores on the last minute.",
+         "brief": "Switzerland performs an outstanding game agains Ecuador",
+         "imgPath": "http://darkroom.baltimoresun.com/wp-content/uploads/2014/06/world-cup-netherlands051-760x511.jpg",
+         "tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+         ],
+         "content": "Switzerland has scored the decisive goal on the last 15 seconds of the game. It now is the leader of their group."
+      }
+   },
+   {
+      "like": false,
+      "report": false,
+      "news": {
+         "newsId": 13,
+         "show": false,
+         "authorId": 13,
+         "views": 0,
+         "likes": 0,
+         "reports": 0,
+         "likeWeight": 100,
+         "reportWeight": 0,
+         "title": "Switzerland scores on the last minute.",
+         "brief": "Switzerland performs an outstanding game agains Ecuador",
+         "imgPath": "http://darkroom.baltimoresun.com/wp-content/uploads/2014/06/world-cup-netherlands051-760x511.jpg",
+         "tags": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+         ],
+         "content": "Switzerland has scored the decisive goal on the last 15 seconds of the game. It now is the leader of their group."
+      }
+   }
+]

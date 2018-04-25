@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>Editar notícia</title>
+    <link rel='stylesheet' type='text/css' href='styling/stylesheet.css'/>
+    <link rel='stylesheet' type='text/css' href='styling/edit_news.css'/>
+    <link rel='stylesheet' type='text/css' href='styling/index.css'/>
+    <script src="scripts/JQuery.js"></script>
+    <script src="scripts/jquery.loadTemplate-1.4.3.js"></script>
+    <script src="scripts/edit_news.js"></script>
+</head>
+<body>
+<div id="panel">
+    <div id="content-area">
+        <form id="news-form" enctype="multipart/form-data">
+            <div id="image-section">
+                <img id="image" src="" alt="image"/>
+                <div id="img-inputs-wrap">
+                    <label for="url-field">URL:</label>
+                    <input id="url-field" type="url" placeholder="www.example.com/example.jpg" name="picture url">
+                    <p>ou</p>
+                    <input id="img-input" type="file" name="picture" accept="image/*">
+                </div>
+            </div>
+
+            <input class="text-area" id="title-field" type="text" placeholder="Título" name="title field">
+            <input class="text-area" id="tags-field" type="text" placeholder="Tags" name="tags field">
+            <textarea class="text-area" id="resume-field" placeholder="Resumo" name="resume field"></textarea>
+            <textarea class="text-area" id="news-body-field" placeholder="Notícia" name="news text field"></textarea>
+            <input id="submit-news" class="button" type="button" value="Submeter Noticia" >
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

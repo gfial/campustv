@@ -1,0 +1,30 @@
+
+#img-input {
+    display: block;
+    margin: 5% auto;
+    width: 200px;
+}
+
+#tag-name, #tag-brief {
+    font-family: sans-serif;
+    margin: 2% auto;
+    display: block;
+    text-align: left;
+    width: 50%;
+    padding: 5px 8px;
+}
+
+#tag-brief {
+    resize: none;
+    height: 100px;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (max-width : 1080px) {
+    /* Styles */
+
+    #tag-name {
+        width: 80%;
+    }
+
+}

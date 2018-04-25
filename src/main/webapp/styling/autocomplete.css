@@ -1,0 +1,33 @@
+* {
+    font-family: Calibri, Myriad, Helvetica, sans-serif;
+}
+
+.input-field {
+    height: 35px;
+}
+
+.ui-widget h5{
+    margin: 0;
+}
+
+.ui-state-focus {
+    background-color: #0094d8;
+}
+
+.ui-autocomplete {
+    z-index: 100;
+    background-color: #e6e7e8;
+    border: 1px solid #a5a5a5;
+    list-style: none;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.ui-helper-hidden-accessible {
+    display: none;
+}
+
+.autocomplete {
+    padding: 5px;
+    display: block;
+}

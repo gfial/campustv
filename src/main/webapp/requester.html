@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Requester</title>
+	</head>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		html, body {
+			height: 100%;
+		}
+		body {
+			margin: 0;
+			font: 100%/1em Arial, Helvetica, sans-serif;
+			background: #eee;
+			color: #333;
+		}
+		#container {
+			width: 60%;
+			height: 100%;
+			margin: 0 auto;
+			padding-top: 10px;
+		}
+		.buttons-container {
+			padding-top: 10px;
+		}
+		#send {
+			margin-left: 10px;
+		}
+		#url, #request, #result {
+			display: block;
+			min-width: 100%;
+			max-width: 100%;
+			min-height: 50px;
+			margin-top: 10px;
+			padding: 1% 2%;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			font: 1em serif;
+		}
+		#url:focus, #request:focus {
+			box-shadow: 0 0 5px #ccc;
+		}
+		#request {
+			background: #fff;
+			height: 20%;
+		}
+		#result {
+			background: #f8f8f8;
+			height: 60%;
+			margin-bottom: 10px;
+		}
+		#send, #reset {
+			float: right;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+			$(function() {				
+				// REQUEST
+				function ajaxRequest(url, data, method, success, error) {
+					return $.ajax({
+						url: url,
+						data: JSON.stringify(data),
+						type: method,
+						contentType: "application/json; charset=utf-8",
+						xhrFields: {
+							withCredentials: true
+						}
+					}).done(success).fail(error);
+				}
+				
+				// SEND ON ENTER
+				$(document).keypress(function(evt) {
+					if (evt.which === 13 && !($('#request').is(':focus')))
+						$('#send').click();
+				});
+				
+				// RESET
+				$('#reset').click(function() {
+					$('#url').val('');
+					$('#request').val('');
+					$('#result').val('');
+				});
+				
+				// SEND
+				$('#send').click(function() {
+					TAB = '   ';
+					$('#result').val('');
+					
+					var url = $('#url').val();
+					var data = null;
+					var success = function(res) {
+						$('#result').val(JSON.stringify(res, null, TAB));
+					}
+					var fail = function(err) {
+						$('#result').val(JSON.stringify(err, null, TAB));
+					}
+					var method = $('input[name=method]:checked').val();
+					
+					try {
+						var val = $('#request').val().trim();
+						if (val !== '')
+							data = JSON.parse(val);
+					} catch(err) {
+						$('#result').val(err);
+						return;
+					}
+					
+					ajaxRequest(url, data, method, success, fail);
+				});
+			});
+		</script>
+	<body>
+		<div id="container">
+			<div class="buttons-container">
+				<input id="get" type="radio" name="method" value="GET" checked>
+				<label for="get">GET</label>
+				<input id="post" type="radio" name="method" value="POST">
+				<label for="post">POST</label>
+				<input id="put" type="radio" name="method" value="PUT">
+				<label for="put">PUT</label>
+				<input id="delete" type="radio" name="method" value="DELETE">
+				<label for="delete">DELETE</label>
+				<input id="send" type="button" value="SEND" />
+				<input id="reset" type="button" value="RESET" />
+			</div>
+			<input id="url" type="text" placeholder="URL">
+			<textarea id="request" placeholder="JSON request"></textarea>
+			<textarea id="result" placeholder="JSON reply" readonly></textarea>
+		</div>
+	</body>
+</html>

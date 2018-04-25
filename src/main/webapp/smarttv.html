@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Smart TV</title>
+    <link rel='stylesheet' type='text/css' href='styling/stylesheet.css' />
+    <link rel='stylesheet' type='text/css' href='styling/smarttv.css' />
+    <link rel='stylesheet' type='text/css' href='styling/sidebar.css' />
+    <link rel='stylesheet' type='text/css' href='styling/autocomplete.css' />
+    <script src="scripts/JQuery.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    <script src="scripts/jstorage.js"></script>
+    <script src="scripts/jquery.loadTemplate-1.4.3.js"></script>
+    <script src="scripts/contentsSession.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/api_urls.js"></script>
+    <script src="scripts/requests.js"></script>
+    <script src="scripts/channelSession.js"></script>
+    <script src="scripts/session.js"></script>
+    <script src="scripts/autocomplete.js"></script>
+    <script src="scripts/sidebar.js"></script>
+    <script src="scripts/smarttv.js"></script>
+
+</head>
+<body>
+    <div id="panel">
+        <div id="top-bar">
+            <div id="centered-top-bar">
+                <div id="create-news-hidden">
+                    <input id="title-create-hidden" class="search-field" type="text" maxlength="90" placeholder="Title of your news (Max. 90 characters)">
+                </div
+                ><div id="search-wrapper">
+                    <input id="search-field" class="search-field" type="text" placeholder="Search">
+                </div>
+            </div>
+            <div id="login">
+            </div>
+        </div>
+        <div id="content-area">
+            <div id="create-news-wrapper">
+                <div id="create-news">
+                    <div id="left">
+                        <div id="photo-preview"></div>
+                        <input id="url-prompt" class="input-field" type="url" placeholder="www.example.com/example.jpg" name="picture url">
+                        <a id="submit-create" class="button">Submit</a
+                        ><a id="cancel-create" class="button">Cancel</a>
+                    </div>
+                    <div id="right">
+                        <div id="header-create">Creating News</div>
+                        <input id="tag-field" class="multi-tags-autocomplete input-field" type="text" placeholder="Tags" name="tags field" size="5">
+                        <textarea id="brief-field" placeholder="Resume of your news (Max. 140 characters)" maxlength="140" name="brief field"></textarea>
+                        <textarea id="news-field" placeholder="News" name="news field"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div id="content-list-title"></div>
+            <div id="news-zone"></div>
+        </div>
+        <center>
+            <div class="footer">
+                <a href="smarttv.html"><img class="footer-img" src="img/campustv_marca_screen_300x300.png"></a>
+            </div>
+        </center>
+    </div>
+
+</body>
+</html>

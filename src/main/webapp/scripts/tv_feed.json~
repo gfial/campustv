@@ -1,0 +1,107 @@
+[
+    {
+        "news": {
+            "newsId": 1,
+            "imgPath": "http://cdn.fct.unl.pt/sites/default/files/imagens/pessoal/Casa%20do%20Pessoal/Instala%C3%A7%C3%B5es/Casa%20Pessoal_2.jpg",
+            "brief": "Junta-te a CampusTV e mantem-te a parte das mais recentes noticias",
+            "title": "CampusTV",
+            "tags": [
+                {
+                    "authenticated": false,
+                    "imgPath": "img/gg",
+                    "brief": "resumo tag",
+                    "name": "inf",
+                    "id": 1
+                }
+            ],
+            "show": false,
+            "authorId": 1,
+            "likes": 100,
+            "reports": 0,
+            "likeWeight": 1,
+            "reportWeight": 0,
+            "content": "A CampusTV é o novo veiculo de informação que pretende revolucionar a forma como as pessoas olham para a informação. Nesta plataforma, uma pessoa procura pelos conteúdos de que mais gosta, e é são lhe proporcionados excelentes conteúdos todo o dia"
+        },
+        "like": false,
+        "report": false
+    },
+    {
+        "news": {
+            "newsId": 2,
+            "imgPath": "http://www.abchomeopatia.com/wp-content/uploads/2013/06/pato.jpg",
+            "brief": "Patos Coelho acaba de se demitir",
+            "title": "Governo demite-se",
+            "tags": [
+                {
+                    "authenticated": false,
+                    "imgPath": "img/gg",
+                    "brief": "resumo tag",
+                    "name": "inf",
+                    "id": 1
+                }
+            ],
+            "show": true,
+            "authorId": 2,
+            "likes": 0,
+            "reports": 0,
+            "likeWeight": 1,
+            "reportWeight": 0,
+            "content": "Ultima hora, Patos Coelho acaba de se demitir, e deixa portugal à beira da euforia. Que alegria!"
+        },
+        "like": false,
+        "report": false
+    },
+    {
+        "news": {
+            "newsId": 3,
+            "imgPath": "http://velocityagency.com/wp-content/uploads/2013/08/go.jpg",
+            "brief": "Vai ser apresentado hoje o novo prototipo campus TV",
+            "title": "It works",
+            "tags": [
+                {
+                    "authenticated": false,
+                    "imgPath": "img/gg",
+                    "brief": "resumo tag",
+                    "name": "inf",
+                    "id": 1
+                }
+            ],
+            "show": false,
+            "authorId": 3,
+            "likes": 0,
+            "reports": 0,
+            "likeWeight": 1,
+            "reportWeight": 0,
+            "content": "O prototipo campus tv que vai ser apresentado já conecta a uma base de dados postgres. Aliás, se não o fizesse, não estaria a ver esta noticia hihihi."
+        },
+        "like": false,
+        "report": false
+    },
+    {
+        "news": {
+            "newsId": 4,
+            "imgPath": "http://cdn.fct.unl.pt/sites/default/files/imagens/pessoal/Casa%20do%20Pessoal/Instala%C3%A7%C3%B5es/Casa%20Pessoal_2.jpg",
+            "brief": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+
+            "title": "Lorem Ipsum chegou à Campus TV",
+            "tags": [
+                {
+                    "authenticated": false,
+                    "imgPath": "img/gg",
+                    "brief": "resumo tag",
+                    "name": "inf",
+                    "id": 1
+                }
+            ],
+            "show": false,
+            "authorId": 1,
+            "likes": 0,
+            "reports": 0,
+            "likeWeight": 1,
+            "reportWeight": 0,
+            "content": "A CampusTV é o novo veiculo de informação que pretende revolucionar a forma como as pessoas olham para a informação. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum .Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Nesta plataforma, uma pessoa procura pelos conteúdos de que mais gosta, e é são lhe proporcionados excelentes conteúdos todo o dia"
+        },
+        "like": false,
+        "report": false
+    }
+]

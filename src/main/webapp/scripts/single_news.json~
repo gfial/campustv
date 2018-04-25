@@ -1,0 +1,27 @@
+{
+    "news": {
+    "newsId": 1,
+        "imgPath": "http://cdn.fct.unl.pt/sites/default/files/imagens/pessoal/Casa%20do%20Pessoal/Instala%C3%A7%C3%B5es/Casa%20Pessoal_2.jpg",
+        "brief": "Junta-te a CampusTV e mantem-te a parte das mais recentes noticias",
+        "title": "CampusTV",
+        "tags": [
+        {
+            "authenticated": false,
+            "imgPath": "img/gg",
+            "brief": "resumo tag",
+            "name": "inf",
+            "id": 1,
+	    "parents":[]
+        }
+    ],
+        "show": false,
+        "authorId": 1,
+        "likes": 0,
+        "reports": 0,
+        "likeWeight": 1,
+        "reportWeight": 0,
+        "content": "A CampusTV é o novo veiculo de informação que pretende revolucionar a forma como as pessoas olham para a informação. Nesta plataforma, uma pessoa procura pelos conteúdos de que mais gosta, e é são lhe proporcionados excelentes conteúdos todo o dia"
+},
+    "like": false,
+    "report": false
+}

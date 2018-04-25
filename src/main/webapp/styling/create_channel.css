@@ -1,0 +1,93 @@
+﻿
+* {
+    font-family: sans-serif;
+}
+
+#name, #tags {
+    width: 50%;
+    padding: 5px 8px;
+}
+
+#tags {
+    margin-top: 2%;
+}
+
+#name {
+    margin-top: 10%;
+}
+
+.hlist {
+    margin-top: 10%;
+    padding: 0;
+}
+
+.hlist > li {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    font-size: 12px;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 0 5px;
+    width: 100px;
+    height: 100px;
+    font-weight: 900;
+    background-color: grey;
+    opacity: 0.5;
+}
+
+.hlist > li > p {
+    color: black;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    bottom: -20px;
+    opacity: 1;
+}
+
+#default-filter {
+    background-image: url(../img/off.png);
+}
+
+#smart-filter {
+    background-image: url(../img/brain.png);
+}
+
+#views-filter {
+    background-image: url(../img/eye.png);
+}
+
+#trending-filter {
+    background-image: url(../img/trending.png);
+}
+
+#top-filter {
+    background-image: url(../img/top.png);
+}
+
+#graph {
+    text-align: center;
+    margin: 10% auto 0; 
+    padding: 0;
+    width: 70%;
+    height: 200px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.graph-bar {
+    display: inline-block;
+    margin: 0 10px;
+    width: 40px;
+    height: 100%;
+    max-height: 100%;
+    min-height: 5%;
+    background-color: red;
+    list-style: none;
+}
+
+#control-bar {
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+}

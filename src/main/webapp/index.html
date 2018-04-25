@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Campus TV - Home</title>
+    <link rel='stylesheet' type='text/css' href='styling/stylesheet.css'/>
+    <link rel='stylesheet' type='text/css' href='styling/index.css'/>
+    <script src="scripts/JQuery.js"></script>
+    <script src="scripts/jquery.loadTemplate-1.4.3.js"></script>
+    <script src="scripts/jstorage.js"></script>
+    <script src="scripts/contentsSession.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/api_urls.js"></script>
+    <script src="scripts/requests.js"></script>
+    <script src="scripts/channelSession.js"></script>
+    <script src="scripts/session.js"></script>
+    <script src="scripts/index.js"></script>
+</head>
+<body>
+<div id="panel">
+    <div id="login-wrap">
+        <img src="/img/login_icon_inv.png">
+        <div>Login / Sign up</div>
+    </div>
+    <div id="dark-background"></div>
+    <div id="outer-window-holder">
+        <div id="middle-window-holder">
+            <div id="login-window">
+                <div id="login">
+                    <div class="login-header">Login</div>
+                    <input id="login-email" class="input-field" type="text" placeholder="E-mail: me@example.com"
+                           name="login e-mail field">
+                    <input id="login-password" class="input-field" type="password" placeholder="Password"
+                           name="login password field">
+                    <button id="submit-login" class="button">Submit</button>
+                    <button id="register-instead" class="button">Create an account</button>
+                </div>
+                <div id="register">
+                    <div class="login-header">Register</div>
+                    <input id="register-email" class="input-field" type="text" placeholder="E-mail: me@example.com"
+                           name="register e-mail field">
+                    <input id="register-user" class="input-field" type="text" placeholder="Username"
+                           name="register user field">
+                    <input id="register-password" class="input-field" type="password" placeholder="Password"
+                           name="register password field">
+                    <input id="register-password-repeat" class="input-field" type="password"
+                           placeholder="Password repeat" name="register password repeat field">
+
+                    <div id="register-buttons">
+                        <button id="submit-register" class="button">Submit</button>
+                        <button id="cancel-register" class="button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content-area">
+        <img id="logo" src="img/logo_cor.png" alt="Campus TV logo"/>
+
+        <div id="search-wrapper">
+            <div id="input-deco"></div>
+            <input id="search-box" class="input-field" type="text" placeholder="Search">
+        </div>
+
+    </div>
+    <div id="button-site">
+        <div id="logo-tv"></div>
+        <div id="logo-smarttv"></div>
+    </div>
+</div>
+</body>
+</html>
